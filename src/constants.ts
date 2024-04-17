@@ -8,6 +8,7 @@ export const POOL_INIT_CODE_HASH = '0xe34f199b19b2b4f47f68442619d555527d244f78a3
  * The default factory enabled fee amounts, denominated in hundredths of bips.
  */
 export enum FeeAmount {
+  LOWESTES = 0,
   LOWEST = 100,
   LOW = 500,
   MEDIUM = 3000,
@@ -18,6 +19,7 @@ export enum FeeAmount {
  * The default factory tick spacings by fee amount.
  */
 export const TICK_SPACINGS: { [amount in FeeAmount]: number } = {
+  [FeeAmount.LOWESTES]: 10,
   [FeeAmount.LOWEST]: 1,
   [FeeAmount.LOW]: 10,
   [FeeAmount.MEDIUM]: 60,
